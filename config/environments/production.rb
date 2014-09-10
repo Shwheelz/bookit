@@ -44,6 +44,9 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  # Force all access to app over SSL, user Strict Transport Security and use secure cookies
+  config.force_ssl = true
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
