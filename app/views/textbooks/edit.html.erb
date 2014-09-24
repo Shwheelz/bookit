@@ -1,9 +1,10 @@
-<% provide(:title, 'Sell Book') %>
-<h1>Sell a Book</h1>
+<% provide(:title, "Edit textbooks") %>
+<h1>Edit your textbooks</h1>
 
 <div class="row">
-	<div class="span6 offset3">
+	<div class="span6 offset 3">
 		<%= form_for(@textbook) do |f| %>
+			<%= render 'shared/error_messages' %>
 
 			<%= f.label :title %>
 			<%= f.text_field :title %>
@@ -14,7 +15,7 @@
 			<%= f.label :course %>
 			<%= f.text_field :course %>
 
-			<%= f.label :isbn, "ISBN" %>
+			<%= f.label :isbn %>
 			<%= f.text_field :isbn %>
 
 			<%= f.label :version %>
@@ -23,8 +24,7 @@
 			<%= f.label :price %>
 			<%= f.text_field :price %>
 
-
-			<%= f.submit "Sell Book", class: "btn btn-large btn-primary" %>
+			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>
 </div>

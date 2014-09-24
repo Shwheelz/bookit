@@ -1,0 +1,24 @@
+<table class="table table-striped">
+	<thead>	
+		<tr>
+			<th data-field="title">Title</th>
+			<th data-field="author">Author</th>
+			<th data-field="course">Course</th>
+			<th data-field="isbn">ISBN</th>
+			<th data-field="version">Version</th>
+			<th data-field="price">Price</th>
+		</tr>
+	</thead>
+	<tbody>
+			<% @textbooks.each do |textbook| %>
+				<tr>
+					<td><%= textbook.title %></td>
+					<td><%= textbook.author %></td>
+					<td><%= textbook.course %></td>
+					<td><%= textbook.isbn %></td>
+					<td><%= textbook.version %></td>
+					<td><%= textbook.price %></td>
+				</tr>
+			<% end %>
+	</tbody>
+</table>
