@@ -186,3 +186,20 @@ input {
 		}
 	}
 }
+
+/* Homepage Search Bar */
+
+#search_btn_home {
+	float: right;
+}
+
+#search_container {
+	// display: inline-block;
+	overflow: hidden;
+	padding-right: .5em;
+}
+
+#search_bar_home {
+	 margin: 0;
+	 width: 100%;
+}

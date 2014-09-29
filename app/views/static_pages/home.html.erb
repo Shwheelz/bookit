@@ -1,9 +1,24 @@
 <div class="center hero-unit">
 	<h1>Book It!</h1>
 
-	<h2>
+	<% if !current_user %>
+		<h2>
 		Buy and sell textbooks at Penn State!  Sign up now to get started!
-	</h2>
+		</h2>
 
-	<%=	link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+		<%=	link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+	<% else %>
+		<h2>
+			Get started by searching for textbooks below!
+		</h2>
+
+		<%= form_tag textbooks_path, method: "get" do %>
+			<p>
+				<%= submit_tag "Search", name: nil, id: "search_btn_home", class: "btn btn-primary"%>
+				<div id="search_container" class="form-group">
+					<%= text_field_tag :search, params[:search], id: "search_bar_home", class: "form-control" %>
+				</div>
+			</p>
+      	<% end %>
+	<% end %>
 </div>

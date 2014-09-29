@@ -15,6 +15,10 @@ class TextbooksController < ApplicationController
 		end
 	end
 
+	def index
+		@textbooks = Textbook.search(params[:search]).paginate(page: params[:page])
+	end
+
 	def show
 		@textbooks = current_user.textbooks
 	end
@@ -33,7 +37,9 @@ class TextbooksController < ApplicationController
   	end
 
 	def destroy
-
+		current_user.textbooks.find_by(id: params[:id]).destroy
+		flash[:success] = "Textbook deleted"
+		redirect_to root_url
 	end
 
 
