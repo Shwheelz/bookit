@@ -1,3 +1,0 @@
-== README
-
-Bookit is a Ruby on Rails application for students to market their textbooks.  It is my first RoR application, created as a first-half semester project for IST 297G at Penn State.  
