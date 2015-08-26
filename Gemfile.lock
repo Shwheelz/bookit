@@ -169,6 +169,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -194,3 +195,6 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   will_paginate (= 3.0.4)
+
+BUNDLED WITH
+   1.10.6

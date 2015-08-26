@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    @textbooks = @user.textbooks.paginate(page: params[:page])
+    if @textbooks != nil
+      @textbooks = @user.textbooks.paginate(page: params[:page])
+    end
   end
 
   def new
@@ -51,7 +53,7 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:name, :email, :phone, 
+    params.require(:user).permit(:name, :email,
                                  :password, :password_confirmation)
   end
 

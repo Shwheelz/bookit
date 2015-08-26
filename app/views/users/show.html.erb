@@ -22,6 +22,7 @@
 				</tr>
 			</thead>
 			<tbody>
+				<% if @textbooks != nil %>
 					<% @user.textbooks.each do |textbook| %>
 						<tr>
 							<td><%= textbook.title %></td>
@@ -38,6 +39,9 @@
 							<% end %>
 						</tr>
 					<% end %>
+				<% else %>
+					<p>There are no textbooks to display</p>
+				<% end %>
 			</tbody>
 		</table>
 
