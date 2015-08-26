@@ -13,9 +13,14 @@ Install gem dependencies
 bundle install
 ````
 
-Update database files
+Run database migrations
 ````
 rake db:migrate RAILS_ENV=development
+````
+
+Generate your secret key, paste it in secrets.sample.yml, then rename the file to secrets.yml
+````
+bundle exec rake secret
 ````
 
 Navigate to <a href="http://localhost:3000">http://localhost:3000</a> in any web browser
