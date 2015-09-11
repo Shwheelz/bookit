@@ -22,25 +22,21 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% if @textbooks != nil %>
-					<% @user.textbooks.each do |textbook| %>
-						<tr>
-							<td><%= textbook.title %></td>
-							<td><%= textbook.author %></td>
-							<td><%= textbook.course %></td>
-							<td><%= textbook.isbn %></td>
-							<td><%= textbook.version %></td>
-							<td><%= textbook.price %></td>
+				<% @user.textbooks.each do |textbook| %>
+					<tr>
+						<td><%= textbook.title %></td>
+						<td><%= textbook.author %></td>
+						<td><%= textbook.course %></td>
+						<td><%= textbook.isbn %></td>
+						<td><%= textbook.version %></td>
+						<td><%= textbook.price %></td>
 
-							<% if current_user.admin? || current_user.id == textbook.user_id %>
-								<td><%= link_to "Edit", edit_textbook_path(textbook) %></td>
-								<td><%= link_to "Delete", textbook, method: :delete,
-  								  data: { confirm: "Would you like to delete this textbook?" } %></td>
-							<% end %>
-						</tr>
-					<% end %>
-				<% else %>
-					<p>There are no textbooks to display</p>
+						<% if current_user.admin? || current_user.id == textbook.user_id %>
+							<td><%= link_to "Edit", edit_textbook_path(textbook) %></td>
+							<td><%= link_to "Delete", textbook, method: :delete,
+								  data: { confirm: "Would you like to delete this textbook?" } %></td>
+						<% end %>
+					</tr>
 				<% end %>
 			</tbody>
 		</table>
