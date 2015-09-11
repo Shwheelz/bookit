@@ -23,5 +23,6 @@ Generate your secret key, paste it in secrets.sample.yml, then rename the file t
 bundle exec rake secret
 ````
 
+
 Navigate to <a href="http://localhost:3000">http://localhost:3000</a> in any web browser
 
